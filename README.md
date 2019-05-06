@@ -1,34 +1,137 @@
-# MarkdownExample
-마크다운 연습
+# 마크다운
+## 1. 마크다운과 오픈소스에 관하여
+### 1.1 마크다운?
+`마크다운`은 일반 텍스트 문서의 양식을 편집하는 문법입니다.  
+간단한 문법구조를 가지고 있어 간결함과 빠른 작성이 가능하단 특징을 가지고 있습니다. 또한 마크다운으로 작성된 문서는 HTML등 다른 문서로 쉽게 변환이 가능합니다.
+### 1.2 오픈소스?
+`오픈소스`란 어떠한 소프트웨어의 소스 코드를 공개해 누구나 제한 없이 해당 코드를 보고 사용할 수 있는 것을 의미합니다
+### 1.3 GitHub?
+`GIT`은 여러 사용자들간의 파일 작업을 조율하기 위한 분산 버전 관리 시스템입니다. `GitHub`은 이러한 GIT를 이용한 프로젝트를 지원하는 웹 호스팅 서비스로 많은 개발자들이 GitHub을 활용해 `오픈소스`를 관리하고 있으며 이를 통해 수많은 오픈소스 프로젝트가 진행되고 있습니다. GitHub에서  저장소 Repository에 관한 정보를 README.md라는 마크다운 문서를 통해 기록합니다.
 
-## 여기는 두번째 헤드
-* 안녕 나는
-* 리스트야
-* ㅎㅇ
+## 2. 마크다운 기본 작성법
+### 2.1 리스트 작성
+순서가 있는 리스트의 경우 1. 2. 3. ...와 같이 숫자와 점으로,  
+순서가 없는 리스트의 경우 특수기호를 사용합니다.
 
-[여기는 구글](https://www.google.co.kr)
+```MarkDown
+1. 항목1
+2. 항목2
+3. 항목3
+```  
 
-![이거는 사과](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZyvb7GGOPFmw1SBpLN6k7hNNrH2IQJQrhBwszlh8No4p6OkTW9w)
+1. 항목1
+2. 항목2
+3. 항목3
 
-`Markdown` 문법 공부하자
-[링크 바로가기](https://gist.github.com/ihoneymon/652be052a0727ad59601)
-
-
-이것은 파이썬과 HTML로  
-~~줄이 안바뀜(스페이스바 2개)  
-
-```python
-import haedal
-include *
-print("Hello world")
+```MarkDown
++ 항목1
+- 항목2
+* 항목3
+  + 항목3-1
+    - 항목3-2
 ```
 
-```html
-<html>
-    <head>  
-    </head>
-    <body>
-        <h1>이것은 HTML</h1>
-    </body>
-</html>
++ 항목1
+- 항목2
+* 항목3
+  + 항목3-1
+    - 항목3-2
+    
+### 2.2 하이퍼링크와 이미지 사용
+마크다운 문서는 하이퍼링크와 이미지를 사용해 작성할 수 있습니다.
+* __하이퍼링크__  
+예시로 구글로 링크를 걸어보겠습니다.
+```MarkDown
+[구글](https://www.google.co.kr)
 ```
+
+    --> [구글](https://www.google.co.kr)
+
+* __이미지 사용__  
+예시로 구글에서 검색한 사과 이미지를 넣어보겠습니다.  
+필요한 것은 넣고자 하는 사진의 이미지 주소입니다.
+```Markdown
+![사과](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZyvb7GGOPFmw1SBpLN6k7hNNrH2IQJQrhBwszlh8No4p6OkTW9w)
+```
+
+    ![사과](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZyvb7GGOPFmw1SBpLN6k7hNNrH2IQJQrhBwszlh8No4p6OkTW9w)
+
+## 3. GIT의 사용
+### 3.1 Repository
+#### 3.1.1 Repository의 종류
+`GIT Repository`는 말그대로 파일이나 폴더의 저장소를 의미합니다.
+GIT은 두 종류의 저장소를 제공합니다.
+* 원격 저장소(Remote Repository) : 파일이 원격 저장소 전용 서버에서 관리되며 여러 사람이 함께 공유하기 위한 저장소입니다  
+
+* 로컬 저장소(Local Repository) : PC에 파일이 저장되는 개인 전용 저장소입니다
+
+#### 3.1.2 Repository 생성  
+___(구름 IDE 사용하는 경우는 별도로)___
+* __기존 디렉토리를 Git 저장소로 이용__  
+기존의 디렉토리를 Git 저장소로 이용하고 싶은 경우 해당 디렉토리에서 다음과 같은 명령어를 실행합니다.
+```
+git init
+```
+이 명령어는 .git 이라는 하위 디렉토리를 만들며 내부에 저장소에 필요한 기본 파일들을 담고 있습니다.
+
+* __기존 저장소를 Clone__  
+`Clone`이란 누군가가 만들어 놓은 저장소의 내용을 웹으로부터 모두 다운로드하는 것을 의미합니다. 이 작업을 통해 복제한 저장소를 로컬 저장소로 사용할 수 있게 됩니다.
+```
+git clone [url]
+```
+
+### 3.2 흐름
+ Git은 파일을 `Committed`, `Modified`, `Staged` 이렇게 세 가지 상태로 관리합니다. Committed란 데이터가 로컬 저장소에 안전하게 저장되었다는 것을 의미하고, Modified는 수정한 파일을 아직 로컬 저장소에 commit하지 않은 것을 말합니다. Staged란 현재 수정한 파일을 곧 commit할 것이라고 표시한 상태를 의미합니다.   
+ 
+이 세 가지 상태는 Git 프로젝트의 세 구성 단계인 `Git 디렉토리`, `워킹 디렉토리`, `Staging Area(Index)`와 관련이 있습니다.
+
+![Local operation](https://git-scm.com/figures/18333fig0106-tn.png)
+ * Git 디렉토리는 Git이 프로젝트의 데이터를 저장하는 곳을 말합니다.
+ * 워킹 디렉토리는 프로젝트의 특정 버전을 가져온 것입니다.
+ * Staging Area는 Git 디렉토리에 있으며, 단순한 파일이고 곧 커밋할 파일에 대한 정보를 저장합니다. Index라고도 부릅니다.
+ 
+대략적인 흐름은 다음과 같습니다.
+1. 워킹디렉토리에서 파일 수정
+2. Staging area에 파일을 `stage`해서 commit할 스냅샷 생성
+3. Staging area의 파일들을 `commit`해서 Git 디렉토리에 영구적 스냅샷으로 저장
+4. `Push`를 통해 원격 저장소에 전송
+
+#### 3.2.1 Add
+파일이나 폴더의 변경사항을 저장소에 기록하려면 `commit`을 해 주어야 합니다. 하지만 막무가내로 commit 명령어를 입력한다고 해서 모든 변경사항들이 스냅샷으로 저장되는 것은 아닙니다.
+우선 `add` 명령어를 이용해 변경한 파일들을 스냅샷에 추가할 것이라고 알려주어야 합니다. 달리 말해 파일들을 Staging area로 stage하는 것을 의미합니다.
+```
+git add .
+```
+위의 명령어를 통해 모든 하위디렉토리의 파일을 stage할 수 있습니다. `add .`에서  .대신 파일이름을 기입함으로 특정 파일만을 stage할 수도 있습니다.
+#### 3.2.2 Commit
+파일이나 폴더의 변경사항을 저장소에 기록하려면 `commit`을 해 주어야 합니다.   
+Staging area의 파일들을 Git 디렉토리에 영구적 스냅샷으로 저장하는 것입니다.
+```
+git commit -m "간단한 설명"
+```
+
+
+#### 3.2.3 Push
+`Push`란 GIT에서 웹 상의 원격 저장소로 변경된 파일을 업로드하는 것을 의미합니다. 
+앞서 commit을 통해 로컬저장소에 저장한 변경사항들을 원격 저장소에 업로드하는 것입니다.
+내 PC의 로컬 저장소에서 변경된 이력을 원격 저장소에 공유하려면,
+반드시 Push를 통해 로컬 저장소의 변경 이력을 원격 저장소에 업로드해야 합니다.
+```
+git push origin master
+```
+위 명령어를 통해 master branch로 데이터를 전송할 수 있습니다.
+
+#### 3.2.4 Pull
+`Pull`은 프로젝트 내용을 원격 저장소에서 로컬 저장소로 업데이트하는 작업을 의미합니다.
+pull 을 실행하면, 원격 저장소에서 최신 변경 이력을 다운로드하여 내 로컬 저장소에 그 내용을 적용합니다.  
+여러명이 하나의 원격 저장소를 이용해 공동작업을 수행하는 경우 각 인원이 같은 원격 저장소에 Push를 할 것입니다. 그럼 이로 인해 발생하는 변경내용을 나의 로컬저장소에도 적용할 필요가 있습니다. 이 때 Pull 명령어를 이용해 최신사항을 업데이트합니다.
+```
+git pull
+```
+
+__참고문헌__
+* [ihoneymon의 마크다운 작성법](https://gist.github.com/ihoneymon/652be052a0727ad59601)
+* [누구나 쉽게 이해할 수 있는 Git 입문](https://backlog.com/git-tutorial/kr/)
+
+* [https://git-scm.com/](https://git-scm.com/)
+* [git 간편안내서](https://rogerdudler.github.io/git-guide/index.ko.html)
