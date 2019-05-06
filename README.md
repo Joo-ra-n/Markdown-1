@@ -44,7 +44,7 @@
 ```MarkDown
 [구글](https://www.google.co.kr)
 ```
-    --> [구글](https://www.google.co.kr)
+-->[구글](https://www.google.co.kr)
 
 * __이미지 사용__  
 예시로 구글에서 검색한 사과 이미지를 넣어보겠습니다.  
