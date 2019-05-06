@@ -44,7 +44,6 @@
 ```MarkDown
 [구글](https://www.google.co.kr)
 ```
-
     --> [구글](https://www.google.co.kr)
 
 * __이미지 사용__  
@@ -53,8 +52,7 @@
 ```Markdown
 ![사과](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZyvb7GGOPFmw1SBpLN6k7hNNrH2IQJQrhBwszlh8No4p6OkTW9w)
 ```
-
-    ![사과](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZyvb7GGOPFmw1SBpLN6k7hNNrH2IQJQrhBwszlh8No4p6OkTW9w)
+ ![사과](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZyvb7GGOPFmw1SBpLN6k7hNNrH2IQJQrhBwszlh8No4p6OkTW9w)
 
 ## 3. GIT의 사용
 ### 3.1 Repository
